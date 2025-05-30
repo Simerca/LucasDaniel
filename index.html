@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Daniel Auto Agent - Vendre sa voiture simplement et en sécurité à Domazan</title>
+    <meta name="description" content="Expert automobile depuis 15 ans, Lucas Daniel vous accompagne pour vendre votre voiture simplement et en toute sécurité à Domazan. Estimation à domicile, annonce professionnelle et paiement sécurisé.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #f9fafb;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(125deg, rgba(37, 99, 235, 0.95) 0%, rgba(30, 58, 138, 0.92) 100%), 
+                         url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(209, 213, 219, 0.4);
+        }
+        
+        .guarantee-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        .price-tag {
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(to right, #10b981, #3b82f6);
+            color: white;
+            padding: 8px 25px;
+            font-weight: 600;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .price-tag:before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border: 17px solid transparent;
+            border-right: 15px solid #10b981;
+        }
+        
+        .contact-card {
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 10;
+            transform: translateY(-50px);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #0ca678;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Animation for steps */
+        .step-item {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-item:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #d1d5db;
+            top: 36px;
+            left: 50%;
+            z-index: -1;
+        }
+        
+        .step-item:last-child:after {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .step-item:after {
+                display: none;
+            }
+        }
+        
+        .hover-grow {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                    <i class="fas fa-car text-blue-600 text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold text-blue-800">Lucas Daniel <span class="text-blue-600">Auto Agent</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                <a href="#processus" class="text-gray-700 hover:text-blue-600 font-medium">Processus</a>
+                <a href="#temoignages" class="text-gray-700 hover:text-blue-600 font-medium">Témoignages</a>
+                <a href="#garantie" class="text-gray-700 hover:text-blue-600 font-medium">Garantie</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            </nav>
+            <a href="#contact" class="hidden md:block bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition">
+                <i class="fas fa-phone-alt mr-2"></i> Estimation gratuite
+            </a>
+            <button class="md:hidden text-gray-700" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white py-3 px-4 shadow-md" id="mobile-menu">
+            <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600"><i class="fas fa-concierge-bell mr-2"></i> Services</a>
+            <a href="#processus" class="block py-2 text-gray-700 hover:text-blue-600"><i class="fas fa-road mr-2"></i> Processus</a>
+            <a href="#temoignages" class="block py-2 text-gray-700 hover:text-blue-600"><i class="fas fa-comments mr-2"></i> Témoignages</a>
+            <a href="#garantie" class="block py-2 text-gray-700 hover:text-blue-600"><i class="fas fa-shield-alt mr-2"></i> Garantie</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600"><i class="fas fa-envelope mr-2"></i> Contact</a>
+            <a href="#contact" class="mt-3 block text-center bg-blue-600 text-white px-5 py-2 rounded-lg font-medium">
+                <i class="fas fa-phone-alt mr-2"></i> Estimation gratuite
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="inline-block bg-blue-900 text-blue-100 px-4 py-1 rounded-full mb-4">
+                    <i class="fas fa-certificate mr-2"></i> Expert automobile 15 ans d'expérience
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Vendez votre voiture <span class="text-blue-200">sans stress</span> avec votre <span class="text-yellow-300">auto agent</span> à Domazan</h1>
+                <p class="text-xl mb-8 text-blue-100">Lucas Daniel, spécialiste automobile, vous propose une solution simple, sécurisée et inspirée du modèle iAD pour vendre votre voiture au meilleur prix sans aucun frais à l'avance.</p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#contact" class="btn-primary flex items-center justify-center text-lg font-bold py-4 px-8 rounded-lg transition">
+                        <i class="fas fa-car mr-3 text-xl"></i> Demander mon estimation gratuite
+                    </a>
+                    <a href="#processus" class="bg-white text-blue-700 font-bold py-4 px-8 rounded-lg flex items-center justify-center transition hover:bg-blue-50">
+                        <i class="fas fa-play-circle mr-3 text-xl"></i> Découvrir le service
+                    </a>
+                </div>
+                
+                <div class="flex items-center flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                        <span>Gratuit sans vente</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                        <span>Paiement sécurisé</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                        <span>12 mois de garantie</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative max-w-md">
+                    <div class="absolute -top-6 -right-6 bg-yellow-400 text-yellow-900 px-6 py-3 rounded-full font-bold rotate-6">
+                        Nouveau service
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e2f335a258b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Expert automobile Lucas Daniel" class="rounded-lg w-full">
+                    </div>
+                    <div class="absolute -bottom-5 -left-5 bg-green-600 text-white py-3 px-5 rounded-lg shadow-lg guarantee-badge">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-xl mr-3"></i>
+                            <div>
+                                <div class="font-bold">Garantie 12 mois</div>
+                                <div class="text-xs">incluse avec la vente</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold"><i class="fas fa-bolt mr-2"></i> VOTRE ALLIÉ POUR VENDRE SANS SOUCIS</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">Le <span class="text-blue-600">modèle iAD appliqué à l'automobile</span></h2>
+                    <p class="text-lg text-gray-600">Inspiré du succès d'iAD immobilier mais dédié aux voitures d'occasion, je vous propose un service complet d'auto agent pour une vente rapide et sécurisée sans aucun frais initial.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-blue-100">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="md:w-2/3">
+                            <h3 class="text-2xl font-bold mb-4">Pourquoi choisir Lucas Daniel comme auto agent ?</h3>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span><strong>Expertise professionnelle</strong> - 15 ans dans le secteur automobile</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span><strong>Déplacement à domicile</strong> - Évaluation de votre voiture chez vous, à Domazan et alentours</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span><strong>Gestion complète</strong> - De l'estimation jusqu'au paiement sécurisé via compte séquestre</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span><strong>Garantie</strong> - 12 mois sur le véhicule vendu pour sécuriser l'acheteur</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <span><strong>Sans engagement</strong> - Aucun frais à l'avance, commission uniquement en cas de vente</span>
+                                </li>
+                            </ul>
+                            <div class="mt-8">
+                                <a href="#contact" class="btn-primary inline-flex items-center justify-center text-base font-bold py-3 px-8 rounded-lg transition">
+                                    <i class="fas fa-calendar-check mr-3"></i> Planifier une estimation
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:w-1/3">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full aspect-square flex items-center justify-center text-gray-400">
+                                <i class="fas fa-user-tie text-5xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold"><i class="fas fa-concierge-bell mr-2"></i> TOUT CE QUE JE FAIS POUR VOUS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">Votre <span class="text-blue-600">vente simplifiée</span> de A à Z</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Je m'occupe de toutes les étapes chronophages et stressantes, vous pouvez enfin vendre votre voiture en toute sérénité</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-xl border border-blue-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Estimation à domicile</h3>
+                    <p class="text-gray-600 text-center">Je me déplace chez vous à Domazan pour évaluer votre véhicule professionnellement et vous aider à fixer le prix de vente idéal.</p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Expert vente voiture Domazan</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl border border-blue-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-camera text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Annonce professionnelle</h3>
+                    <p class="text-gray-600 text-center">Création d'une annonce optimisée avec photos HD et description détaillée diffusée sur les meilleures plateformes automobiles.</p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Annonce voiture pro</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl border border-blue-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-headset text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Gestion des contacts</h3>
+                    <p class="text-gray-600 text-center">Je filtre les appels, réponds aux questions et gère toutes les visites d'essai à votre place.</p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Vente simplifiée</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl border border-blue-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-euro-sign text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Paiement sécurisé</h3>
+                    <p class="text-gray-600 text-center">Le montant de la vente est versé sur un compte séquestre avant la remise du véhicule.</p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Paiement sécurisé voiture</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl border border-blue-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-file-contract text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Administration simplifiée</h3>
+                    <p class="text-gray-600 text-center">Préparation de tous les documents nécessaires pour une vente en toute légalité.</p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Modèle iAD auto</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card bg-gray-50 p-8 rounded-xl border border-blue-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-award text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Garantie incluse</h3>
+                    <p class="text-gray-600 text-center">Une garantie de 12 mois est proposée à l'acheteur, sécurisant la transaction.</p>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Garantie voiture occasion</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <div class="inline-flex items-center bg-yellow-50 border border-yellow-200 px-6 py-3 rounded-full">
+                    <i class="fas fa-euro-sign text-yellow-600 mr-2"></i>
+                    <span class="font-semibold">Vous ne payez que si votre voiture est vendue !</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="processus" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold"><i class="fas fa-road mr-2"></i> UN PROCESSUS SIMPLIFIÉ</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">Comment vendre votre voiture <span class="text-blue-600">en 4 étapes</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Un accompagnement clair et transparent pour une vente rapide et sans tracas</p>
+            </div>
+            
+            <div class="flex md:flex-row flex-col justify-center items-center md:items-start gap-10 mb-12">
+                <div class="step-item flex flex-col items-center md:w-1/4">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white font-bold text-2xl mb-3">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Contact & Estimation</h3>
+                    <p class="text-gray-700 text-center">Vous me contactez, je me déplace gratuitement à votre domicile pour estimer votre véhicule</p>
+                </div>
+                
+                <div class="step-item flex flex-col items-center md:w-1/4">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white font-bold text-2xl mb-3">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Annonce Pro</h3>
+                    <p class="text-gray-700 text-center">Je crée une annonce professionnelle diffusée sur les meilleurs sites spécialisés</p>
+                </div>
+                
+                <div class="step-item flex flex-col items-center md:w-1/4">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white font-bold text-2xl mb-3">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Visites & Négociation</h3>
+                    <p class="text-gray-700 text-center">Je gère les contacts et les visites d'essai, négocie le meilleur prix pour vous</p>
+                </div>
+                
+                <div class="step-item flex flex-col items-center md:w-1/4">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white font-bold text-2xl mb-3">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Vente Sécurisée</h3>
+                    <p class="text-gray-700 text-center">Paiement sécurisé via compte séquestre et transfert du véhicule</p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-600 rounded-2xl p-10 text-white max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-4">Économisez temps et énergie !</h3>
+                        <p class="mb-6">La vente d'un véhicule par un particulier prend en moyenne plus de 3 semaines avec de nombreuses sollicitations. Avec mon service d'auto agent, profitez d'une vente rapide (délai moyen de 10 jours) sans perdre de temps en gestion et négociations.</p>
+                        <div class="flex items-center">
+                            <div class="text-3xl font-bold mr-4">
+                                3x
+                            </div>
+                            <div>
+                                <div class="font-semibold">Plus rapide</div>
+                                <div>que la vente par un particulier</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Temps économisé" class="rounded-xl border-4 border-white shadow-lg hover-grow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="temoignages" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold"><i class="fas fa-comments mr-2"></i> SATISFACTION CLIENT</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">Ce que disent mes clients</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Des propriétaires de véhicules qui ont choisi la solution Auto Agent pour vendre simplement et efficacement</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                            <span class="font-bold">M</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">Martine L.</div>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"J'avais essayé de vendre ma voiture plusieurs mois sans succès. Avec Lucas, elle est partie en une semaine ! Sa maîtrise du marché et sa rédaction d'annonce sont irréprochables."</p>
+                    <div class="text-blue-600">
+                        <i class="fas fa-car mr-2"></i> Peugeot 308, vendue à Montpellier
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                            <span class="font-bold">P</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">Pierre G.</div>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Le service de paiement sécurisé m'a vraiment rassuré. Plus d'inquiétude pour la transaction financière. Lucas s'est occupé de tout, de l'annonce au transfert du véhicule. À recommander !"</p>
+                    <div class="text-blue-600">
+                        <i class="fas fa-car mr-2"></i> Renault Clio, vendue à Avignon
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mr-4">
+                            <span class="font-bold">S</span>
+                        </div>
+                        <div>
+                            <div class="font-bold">Sophie D.</div>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Comme service, c'est exactement ce qu'il manquait sur le marché. L'estimation à domicile a été très professionnelle, et la garantie offerte à l'acheteur a été un vrai plus pour la vente."</p>
+                    <div class="text-blue-600">
+                        <i class="fas fa-car mr-2"></i> Toyota Yaris, vendue à Nîmes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Lucas -->
+    <section class="py-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Lucas Daniel - Expert automobile" class="rounded-xl w-full max-w-xs hover-grow">
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-500 text-yellow-900 px-4 py-2 font-bold rounded-lg">
+                            <i class="fas fa-car mr-2"></i> 15 ans
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <span class="text-blue-200 font-semibold"><i class="fas fa-user-tie mr-2"></i> MON EXPERTISE À VOTRE SERVICE</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Lucas Daniel, votre <span class="text-yellow-300">expert auto à Domazan</span></h2>
+                    <p class="text-lg mb-6">Passionné d'automobile depuis toujours, j'ai acquis une solide expertise durant mes 15 années passées dans le secteur. Après avoir travaillé dans différentes concessions et centres de contrôle, j'ai décidé de mettre mes compétences au service des particuliers.</p>
+                    <p class="mb-8">Mon objectif : simplifier la vente de votre voiture d'occasion en vous épargnant toutes les étapes contraignantes et en garantissant une transaction sécurisée. Je me tiens à votre disposition sur Domazan et dans un rayon de 40km pour vous accompagner.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center bg-blue-600 bg-opacity-50 px-4 py-2 rounded-lg">
+                            <i class="fas fa-medal text-xl mr-2 text-yellow-400"></i>
+                            <span>Expert agréé</span>
+                        </div>
+                        <div class="flex items-center bg-blue-600 bg-opacity-50 px-4 py-2 rounded-lg">
+                            <i class="fas fa-map-marked-alt text-xl mr-2 text-yellow-400"></i>
+                            <span>Intervention sur Domazan et alentours</span>
+                        </div>
+                        <div class="flex items-center bg-blue-600 bg-opacity-50 px-4 py-2 rounded-lg">
+                            <i class="fas fa-file-signature text-xl mr-2 text-yellow-400"></i>
+                            <span>Transparent sur les documents</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="contact-card">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2 bg-blue-700 text-white p-10 rounded-l-xl">
+                        <h2 class="text-3xl font-bold mb-6">Demandez votre <span class="text-yellow-300">estimation gratuite</span></h2>
+                        <p class="mb-8">Prêt à vendre votre voiture sans stress ? Remplissez ce formulaire ou contactez-moi directement pour un rendez-vous à domicile sans engagement.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-yellow-400 text-yellow-900 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Appelez-moi</div>
+                                    <div class="text-xl">06 12 34 56 78</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-400 text-yellow-900 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Envoyez un email</div>
+                                    <div class="text-xl">contact@lucasautoagent.fr</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-400 text-yellow-900 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Zone d'intervention</div>
+                                    <div class="text-xl">Domazan et 40km alentours</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 bg-white p-10 rounded-r-xl">
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-2">Nom et Prénom</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-2">Téléphone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="car" class="block text-gray-700 mb-2">Véhicule à vendre</label>
+                                <input type="text" id="car" placeholder="Marque, modèle, année..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-2">Message (optionnel)</label>
+                                <textarea id="message" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-secondary w-full flex items-center justify-center text-lg font-bold py-4 rounded-lg transition">
+                                <i class="fas fa-paper-plane mr-3"></i> Recevoir une estimation
+                            </button>
+                            
+                            <p class="text-gray-600 text-sm text-center">
+                                <i class="fas fa-lock mr-1"></i> Vos informations sont traitées de manière confidentielle. Aucun spam.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="garantie" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold"><i class="fas fa-question-circle mr-2"></i> QUESTIONS FRÉQUENTES</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">Tout savoir sur le service Auto Agent</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl overflow-hidden border border-blue-200">
+                    <button class="w-full p-6 text-left flex justify-between items-center">
+                        <span class="font-bold text-lg">Combien coûte votre service ?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-700">Mon service est gratuit sans engagement. Aucun frais n'est demandé à l'avance. Une commission est prélevée uniquement en cas de vente réussie de votre véhicule. Cette commission est transparente et vous sera communiquée lors de l'estimation initiale.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden border border-blue-200">
+                    <button class="w-full p-6 text-left flex justify-between items-center">
+                        <span class="font-bold text-lg">Quelle est la garantie proposée ?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-700">Tous les véhicules vendus par mon intermédiaire bénéficient d'une garantie de 12 mois sur les éléments mécaniques principaux (moteur, transmission, etc.). Cette garantie, fournie par un de mes partenaires spécialisés, est un atout majeur pour rassurer l'acheteur et valoriser votre véhicule.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden border border-blue-200">
+                    <button class="w-full p-6 text-left flex justify-between items-center">
+                        <span class="font-bold text-lg">Comment le paiement est-il sécurisé ?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-700">Le montant de la vente est versé sur un compte séquestre avant la remise du véhicule. Vous êtes ainsi certain d'être payé avant de transférer la propriété de votre voiture. L'acheteur quant à lui sait que le montant est bloqué et ne sera débloqué qu'après réception du véhicule.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden border border-blue-200">
+                    <button class="w-full p-6 text-left flex justify-between items-center">
+                        <span class="font-bold text-lg">Dans quelle zone intervenez-vous ?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-700">Je me déplace à votre domicile dans un rayon de 40km autour de Domazan, couvrant ainsi les principales villes du Gard comme Avignon, Nîmes, Beaucaire ou Aramon. Pour les localités plus éloignées, merci de me contacter pour étude de faisabilité.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden border border-blue-200">
+                    <button class="w-full p-6 text-left flex justify-between items-center">
+                        <span class="font-bold text-lg">Que faire si ma voiture ne trouve pas preneur ?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-700">Après une période définie ensemble (généralement 1 mois), si votre véhicule ne trouve pas acheteur au prix estimé, nous réévaluons la stratégie de vente ensemble. Vous n'aurez aucun frais à payer dans ce cas, mon service étant rémunéré uniquement sur vente effective.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-xl md:text-2xl font-bold text-center md:text-left">
+                    <i class="fas fa-car-alt mr-3"></i> Prêt à vendre votre voiture sans tracas ?
+                </div>
+                <a href="#contact" class="btn-secondary flex items-center justify-center text-lg font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">
+                    <i class="fas fa-calendar-alt mr-3"></i> Prendre rendez-vous
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white mr-3">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Lucas Daniel <span class="text-blue-400">Auto Agent</span></h3>
+                    </div>
+                    <p class="mb-4">Vendre votre voiture simplement, rapidement et en toute sécurité à Domazan et alentours.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Estimation à domicile</a></li>
+                        <li><a href="#services" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Annonce professionnelle</a></li>
+                        <li><a href="#services" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Gestion des contacts</a></li>
+                        <li><a href="#services" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Paiement sécurisé</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Liens utiles</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#processus" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Notre processus</a></li>
+                        <li><a href="#temoignages" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Témoignages</a></li>
+                        <li><a href="#garantie" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> FAQ</a></li>
+                        <li><a href="#contact" class="hover:text-white"><i class="fas fa-angle-right mr-2 text-blue-500"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-3"></i>
+                            <span>Domazan et 40km alentours</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-500 mt-1 mr-3"></i>
+                            <span>06 12 34 56 78</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-blue-500 mt-1 mr-3"></i>
+                            <span>contact@lucasautoagent.fr</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-blue-500 mt-1 mr-3"></i>
+                            <span>Lun-Ven: 9h-19h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-sm">
+                    &copy; 2023 Lucas Daniel Auto Agent. Tous droits réservés.
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-white">Mentions légales</a>
+                    <a href="#" class="hover:text-white">Politique de confidentialité</a>
+                    <a href="#" class="hover:text-white">CGU</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle for mobile
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('block');
+        });
+        
+        // FAQ accordion
+        const faqButtons = document.querySelectorAll('#garantie button');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.classList.toggle('hidden');
+                
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-plus')) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const menu = document.getElementById('mobile-menu');
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
